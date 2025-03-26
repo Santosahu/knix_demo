@@ -42,4 +42,9 @@ models:
       +materialized: view
     knix_raw:
       +materialized: table
+      +database: "{{ env_var('DBT_DB_RAW') }}"
+      +schema: KNIX_DEMO_SCHEMA
+    final:
+      +materialized: table
+      +database: "{{ env_var('DBT_DB_RAW') }}"
       
